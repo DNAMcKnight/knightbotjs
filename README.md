@@ -1,0 +1,1 @@
+This is a rewrite of my Discord bot KnightBot written in Javascript. This is an opensource project, created to colaborate with other developers and to show my progress.
