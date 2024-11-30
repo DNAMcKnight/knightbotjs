@@ -7,7 +7,7 @@ export const handleSlashCommand = async (interaction) => {
 
   for (const command of slashCommands) {
     if (interaction.commandName === command.data.name) {
-      await command.run(interaction);
+      await command.callback(interaction);
     }
   }
 };
