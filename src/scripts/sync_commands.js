@@ -7,6 +7,10 @@ const commands = [
     name: "ping",
     description: "Replies with pong!",
   },
+  {
+    name: "test",
+    description: "Welcome to test command!",
+  },
 ];
 
 const rest = new REST({ version: "10" }).setToken(process.env.TOKEN);

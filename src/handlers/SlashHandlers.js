@@ -1,6 +1,6 @@
-import { PingCommand } from "../commands/core.js";
+import { PingCommand, TestCommand } from "../commands/core.js";
 
-export const slashCommands = [PingCommand];
+export const slashCommands = [PingCommand, TestCommand];
 
 export const handleSlashCommand = async (interaction) => {
   if (!interaction.isCommand()) return;
