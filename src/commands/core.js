@@ -1,4 +1,5 @@
-import { getLinkedTags, getLinkedUser } from "../connectToDB.js";
+import { getLinkedTags, getLinkedUser } from "../utils/connectToDB.js";
+import { getPlayer } from "../utils/clashUtils.js";
 
 export const PingCommand = {
   data: {
@@ -20,8 +21,13 @@ export const TestCommand = {
   },
   callback: async (interaction) => {
     await interaction.deferReply();
-    const discordId = await getLinkedTags(interaction.user.id.toString());
-    await interaction.editReply(`results: ${discordId}`);
+    const tags = await getLinkedTags(interaction.user.id.toString());
+    const names = [];
+    for (let i = 0; i < tags.length; i++) {
+      const playerData = await getPlayer(tags[i]);
+      names.push(playerData.name);
+    }
+    await interaction.editReply(`results: ${names}`);
     return true;
   },
 };
