@@ -5,8 +5,8 @@ WORKDIR /app
 COPY ./package.json .
 COPY pnpm-lock.yaml .
 
-RUN apt-get update
-RUN apt-get upgrade
+RUN apt-get update -y
+RUN apt-get upgrade -y
 
 RUN npm install -g pnpm && pnpm install
 
