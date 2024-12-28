@@ -10,3 +10,4 @@ services:
       - GUILD_ID=${GUILD_ID}
       - SWIMBOT_DB=${SWIMBOT_DB}
       - COC_TOKEN=${COC_TOKEN}
+      - DEBUG=${DEBUG}
